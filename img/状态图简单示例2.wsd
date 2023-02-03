@@ -1,0 +1,16 @@
+@startuml 
+
+skinparam DefaultFontName PingFangSC-Regular
+
+hide empty description
+
+state "Confirm Credit" as s1
+state "Process Order" as s2
+state "Cancel Order" as s3
+
+Waiting --> s1 : receive order\n[amount > 25]
+s1 -> s2 : approved/debit account()
+Waiting --> s2 : receive order\n[amount < 25]
+s1 --> s3 : rejected
+
+@enduml

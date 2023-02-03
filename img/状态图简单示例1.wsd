@@ -1,0 +1,11 @@
+@startuml 
+
+skinparam DefaultFontName PingFangSC-Regular
+
+hide empty description
+
+[*] -> Ready
+Ready --> Done : Stop[normal]/ctr:=0
+Done --> [*] : Stop
+
+@enduml
